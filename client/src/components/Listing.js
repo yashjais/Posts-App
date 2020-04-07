@@ -1,9 +1,17 @@
 import React from 'react'
+import axios from '../config/axios'
 
 class Listing extends React.Component {
     constructor() {
         super()
-        this.state = {}
+        this.state = {
+            posts: []
+        }
+    }
+    componentDidMount() {
+        axios.get('/posts')
+            .then(res => console.log(res.data))
+            .catch(err => alert(err))
     }
     render() {
         return(
