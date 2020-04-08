@@ -1,5 +1,5 @@
 import React from 'react'
-import axios from '../config/axios'
+import axios from '../../config/axios'
 
 class Listing extends React.Component {
     constructor() {

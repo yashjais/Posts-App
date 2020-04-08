@@ -13,7 +13,8 @@ module.exports.login = (req, res) => {
         })
         .then(function(token) {
             // console.log('after the generateToken', user, token)
-            res.setHeader('x-auth', token).send({})        
+            // res.setHeader('x-auth', token).send({}) 
+            res.send({token})        
         })
         .catch(function(err) {
             res.send(err)

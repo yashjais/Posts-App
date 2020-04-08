@@ -2,8 +2,11 @@ import React from 'react'
 
 function Home() {
     return (
-        <div>
-            <h2>Home</h2>
+        <div style={{textAlign: 'center'}}>
+            <br />
+            <h2>Welcome to this Website</h2>
+            <br />
+            <b>This site is made using MERN stack. This site has user-authentication. You can do CRUD operation on Posts and can add comment and score on other post.</b>
         </div>
     )
 }
