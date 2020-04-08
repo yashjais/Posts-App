@@ -3,7 +3,7 @@ const path = require('path')
 const Post = require('../models/Post')
 
 module.exports.list = (req, res) => {
-    Post.find()
+    Post.find().populate('user',['userName', 'email'])
         .then(posts => res.send(posts))
         .catch(err => res.send(err))
 }
@@ -35,6 +35,8 @@ module.exports.create = (req, res) => {
             // console.log(err)
         } else {
             if(req.file){
+                // console.log(req.file)
+                // console.log(req.body)
                 const body = {}
                 body.title = req.body.title
                 body.user = req.user._id
@@ -55,7 +57,7 @@ module.exports.create = (req, res) => {
 
 module.exports.show = (req, res) => {
     const _id = req.params.id
-    Post.findOne({_id})
+    Post.findOne({_id}).populate('user',['userName', 'email'])
         .then(post => {
             if(post) {
                 res.send(post)

@@ -16,7 +16,11 @@ const postSchema = new Schema({
     },
     user: {
         type: Schema.Types.ObjectId,
-        required: true
+        required: true,
+        ref: 'User'
+    },
+    author: {
+        type: String
     },
     score: [{
         user: {

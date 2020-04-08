@@ -7,6 +7,7 @@ import Register from './components/Users/Register'
 import Account from './components/Users/Account'
 
 import Listing from './components/Posts/Listing'
+import Show from './components/Posts/Show'
 
 function App() {
     const handleLogout = () => {
@@ -68,17 +69,8 @@ function App() {
             <Route path="/register" component={Register} exact={true} />
             <Route path="/account" component={Account} exact={true} />
 
-            <Route path="/posts" component={Listing} />
-            {/* <Route path="/notes/pin" component={NotesList} exact={true} />
-            <Route path="/notes/bin" component={NotesList} exact={true} />
-            <Route path="/notes/archive" component={NotesList} exact={true} />
-            <Route path="/notes/add" component={NotesAdd} exact={true} />
-            <Route path="/notes/edit/:id" component={NotesEdit} exact={true} />
-            <Route path="/notes/:id" component={NotesShow} />
-
-            <Route path="/categories" component={CategoriesList} exact={true} />
-            <Route path="/categories/edit/:id" component={CategoryEdit} exact={true} />
-            <Route path="/categories/:id" component={CategoryShow} /> */}
+            <Route path="/posts" component={Listing} exact={true}/>
+            <Route path="/posts/:id" component={Show} />
             </Switch>
 
             </BrowserRouter>
