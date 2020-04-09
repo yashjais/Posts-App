@@ -25,6 +25,7 @@ const postSchema = new Schema({
     score: [{
         user: {
             type: Schema.Types.ObjectId,
+            ref: 'User'
         },
         rating: {
             type: String,
@@ -34,6 +35,7 @@ const postSchema = new Schema({
     comments: [{
         user: {
             type: Schema.Types.ObjectId,
+            ref: 'User'
         },
         comment: String,
         createdAt: {

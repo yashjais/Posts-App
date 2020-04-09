@@ -8,6 +8,7 @@ import Account from './components/Users/Account'
 
 import Listing from './components/Posts/Listing'
 import Show from './components/Posts/Show'
+import Add from './components/Posts/Add'
 
 function App() {
     const handleLogout = () => {
@@ -28,18 +29,18 @@ function App() {
                                 <React.Fragment> 
                                     
                                     <li className="nav-item active">
-                                        <a className="nav-link" ><Link to="/">Home</Link> </a>
+                                        <Link className="nav-link" to="/">Home</Link>
                                     </li>
                                     
                 
                                     <li className="nav-item active">
-                                        <a className="nav-link" href="/"><Link to="/posts">Posts</Link> </a>
+                                        <Link className="nav-link" to="/posts">Posts</Link> 
                                     </li>
                                     <li className="nav-item active">
-                                        <a className="nav-link float-right" href="/"><Link to="/account"> Account </Link> </a>
+                                        <Link className="nav-link float-right" to="/account"> Account </Link>
                                     </li>
                                     <li className="nav-item active">
-                                        <a className="nav-link float-right" href="/"><Link to="#" onClick={handleLogout}> Logout </Link> </a>
+                                        <Link className="nav-link float-right" to="#" onClick={handleLogout}> Logout </Link>
                                     </li>
                                 </React.Fragment>
                             ) : (
@@ -70,6 +71,7 @@ function App() {
             <Route path="/account" component={Account} exact={true} />
 
             <Route path="/posts" component={Listing} exact={true}/>
+            <Route path="/posts/add" component={Add} exact={true} />
             <Route path="/posts/:id" component={Show} />
             </Switch>
 

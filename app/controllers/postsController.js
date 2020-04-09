@@ -35,8 +35,7 @@ module.exports.create = (req, res) => {
             // console.log(err)
         } else {
             if(req.file){
-                // console.log(req.file)
-                // console.log(req.body)
+                // console.log(req.fis
                 const body = {}
                 body.title = req.body.title
                 body.user = req.user._id
@@ -57,7 +56,7 @@ module.exports.create = (req, res) => {
 
 module.exports.show = (req, res) => {
     const _id = req.params.id
-    Post.findOne({_id}).populate('user',['userName', 'email'])
+    Post.findOne({_id}).populate('user',['userName', 'email']).populate('score.user',['userName', 'email']).populate('comments.user',['userName', 'email'])
         .then(post => {
             if(post) {
                 res.send(post)
@@ -78,11 +77,13 @@ module.exports.update = (req, res) => {
             if(post) {
                 // if(body.title) { // userId == user giving false despite having same string
                 //     const user = post.user
-                    console.log('userId', userId)
-                    console.log('post.user', user)
-                    console.log(userId == user)
+
+                    // console.log('userId', userId)
+                    // console.log('here')
+                    // console.log('post.user', user)
+                    // console.log(userId == user)
                 //     if(userId == user) {
-                        console.log('in the game')
+                //         console.log('in the game')
                 //         post.title = body.title
                 //     } else {
                 //         res.send('you can\'t change the title')

@@ -18,7 +18,7 @@ class Listing extends React.Component {
         })
             .then(res => {
                 const posts = res.data
-                console.log(posts)
+                // console.log(posts)
                 this.setState({posts})
             })
             .catch(err => {
